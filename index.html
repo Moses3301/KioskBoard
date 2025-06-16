@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KioskBoard with Language Switcher</title>
+    <link rel="stylesheet" href="dist/kioskboard-2.3.0.min.css" />
+    <style>
+        /* Language selector styling */
+        .kb-language-row {
+            display: flex;
+            justify-content: center;
+            padding: 8px;
+            background: #f0f0f0;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+        
+        .kb-language-btn {
+            margin: 0 5px;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .kb-language-btn:hover {
+            background: #e9ecef;
+        }
+        
+        .kb-language-btn.active {
+            background: #007bff;
+            color: white;
+            border-color: #0056b3;
+        }
+
+        .input-demo {
+            margin: 20px;
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <input 
+        class="js-virtual-keyboard input-demo" 
+        data-kioskboard-type="all" 
+        data-kioskboard-placement="bottom" 
+        data-kioskboard-specialcharacters="true"
+        placeholder="Click to type..." 
+    />
+
+    <script src="build/kioskboard-aio.js"></script>
+    <script>
+// Initialize KioskBoard with language selector
+KioskBoard.init({
+  keysArrayOfObjects: [
+   {
+      "0": "Q",
+      "1": "W",
+      "2": "E",
+      "3": "R",
+      "4": "T",
+      "5": "Y",
+      "6": "U",
+      "7": "I",
+      "8": "O",
+      "9": "P"
+   },
+   {
+      "0": "A",
+      "1": "S",
+      "2": "D",
+      "3": "F",
+      "4": "G",
+      "5": "H",
+      "6": "J",
+      "7": "K",
+      "8": "L"
+   },
+   {
+      "0": "Z",
+      "1": "X",
+      "2": "C",
+      "3": "V",
+      "4": "B",
+      "5": "N",
+      "6": "M"
+   }
+],
+      // Language Code (ISO 639-1) for custom keys (for language support) => e.g. "de" || "en" || "fr" || "hu" || "tr" etc...
+  language: 'en',
+
+  // The theme of keyboard => "light" || "dark" || "flat" || "material" || "oldschool"
+  theme: 'dark',
+
+  // Scrolls the document to the top or bottom(by the placement option) of the input/textarea element. Prevented when "false"
+  autoScroll: true,
+
+  // Uppercase or lowercase to start. Uppercased when "true"
+  capsLockActive: false,
+
+  keysSpecialCharsArrayOfStrings: [
+    '!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
+    '-', '_', '=', '+', '[', ']', '{', '}', '|', '\\',
+    ':', ';', '"', '\'', '<', '>', ',', '.', '?', '/',
+    '`', '~', '€', '£', '¥', '©', '®', '™', '°', '±'
+  ],
+  keysNumpadArrayOfNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
+});
+KioskBoard.run('.js-virtual-keyboard')
+    </script>
+</body>
+</html>

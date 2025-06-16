@@ -1,9 +1,7 @@
 /*!
-* KioskBoard - Virtual Keyboard ('https://github.com/furcan/KioskBoard')
-* Description: This file contains the KioskBoard CSS codes as internal to use the KioskBoard as one file. This file has been created automatically from using the "kioskboard.js", and "kioskboard.css" files.
-* Version: 2.3.0
-* Author: Furkan ('https://github.com/furcan')
-* Copyright 2022 KioskBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
+* KioskBoard - Virtual Keyboard with Dynamic Language Switching
+* Enhanced version with language selection popup
+* Based on KioskBoard v2.3.0 by Furkan
 */
 
 /* global define */
@@ -29,7 +27,91 @@
 
   // KioskBoard: Internal CSS Codes: begin
   var kioskBoardInternalCSSCodes = function () {
-    var internalCSS = '#KioskBoard-VirtualKeyboard{box-sizing:border-box!important;position:fixed;z-index:2000;width:100%;max-width:1440px;background:#e3e3e3;background:linear-gradient(to right bottom,#eee,#ebebeb,#e8e8e8,#e6e6e6,#e3e3e3);-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);padding:25px 20px 20px;left:0;right:0;margin:auto}#KioskBoard-VirtualKeyboard.kioskboard-placement-bottom{top:unset;bottom:0;border-radius:10px 10px 0 0}#KioskBoard-VirtualKeyboard.kioskboard-placement-top{top:0;bottom:unset;border-radius:0 0 10px 10px}#KioskBoard-VirtualKeyboard *{box-sizing:border-box!important}#KioskBoard-VirtualKeyboard .kioskboard-wrapper{position:relative;background:inherit;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}#KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow{padding-right:12px!important;overflow:hidden auto}#KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow::-webkit-scrollbar{height:6px;width:6px}#KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow::-webkit-scrollbar-track{border-radius:3px;background:rgba(255,255,255,.75)}#KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow::-webkit-scrollbar-thumb{border-radius:3px;background:rgba(0,0,0,.25);cursor:pointer}#KioskBoard-VirtualKeyboard .kioskboard-row{position:relative;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center}#KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key]{-webkit-user-select:none;-ms-user-select:none;-moz-user-select:none;user-select:none;position:relative;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;-webkit-transform-origin:bottom center;transform-origin:bottom center;cursor:pointer;font-size:22px;line-height:1;font-weight:normal;font-family:sans-serif;max-width:6.25%;margin:8px 8px 12px;padding:12px 12px 22px;border-radius:8px;background:#fafafa;color:#707070;border:2px solid rgba(255,255,255,.04);-webkit-box-shadow:0 4px 0 .04px rgba(0,0,0,.1);box-shadow:0 4px 0 .04px rgba(0,0,0,.1);border-bottom-color:rgba(255,255,255,.1);border-bottom-width:4px;-webkit-box-flex:1;-webkit-flex:1 1 100%;-ms-flex:1 1 100%;flex:1 1 100%;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;text-align:left}#KioskBoard-VirtualKeyboard.kioskboard-tolowercase .kioskboard-row-dynamic span[class^=kioskboard-key]{text-transform:lowercase}#KioskBoard-VirtualKeyboard.kioskboard-touppercase .kioskboard-row-dynamic span[class^=kioskboard-key]{text-transform:uppercase}#KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key]:not(.spacebar-denied):hover{-webkit-transform:scaleY(.98) translateY(1px);transform:scaleY(.98) translateY(1px)}#KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key]:not(.spacebar-denied):active{-webkit-transform:scaleY(.95) translateY(4px);transform:scaleY(.95) translateY(4px)}#KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key] svg{position:absolute;z-index:10;left:10px;top:10px}#KioskBoard-VirtualKeyboard .kioskboard-row-top{padding:0 0 10px;border-bottom:1px solid rgba(0,0,0,.06);margin:0 0 10px}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom{padding:10px 0 0;border-top:1px solid rgba(0,0,0,.06);margin:10px 0 0}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock{max-width:100%;min-height:60px;width:140px;-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock::before{content:"";position:absolute;z-index:2;width:10px;height:10px;border-radius:10px;right:6px;top:6px;background:#c4c4c4}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock.capslock-active::before{background:#5decaa}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-backspace,#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-enter{position:relative;max-width:100%;min-height:60px;width:140px;-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-space{min-height:60px;max-width:100%;width:calc(100% - 16px - 140px - 16px - 140px - 16px - 140px - 16px);-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom.kioskboard-with-specialcharacter span.kioskboard-key-space{width:calc(100% - 16px - 140px - 16px - 140px - 16px - 140px - 16px - 140px - 16px)}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-space.spacebar-denied{opacity:.4!important;cursor:not-allowed!important}#KioskBoard-VirtualKeyboard .kioskboard-with-specialcharacter span.kioskboard-key-specialcharacter{position:relative;max-width:100%;min-height:60px;width:140px;-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}#KioskBoard-VirtualKeyboard .kioskboard-row-numpad{display:flex;max-width:320px;margin:auto}#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span[class^=kioskboard-key]{max-width:100%;min-height:60px;width:calc(33.3333% - 16px);-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-last{order:11}#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-backspace{order:10}#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-enter{order:12}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters{-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;visibility:hidden;opacity:0;position:absolute;background:inherit;padding:20px;z-index:20;left:0;top:0;height:100%;width:100%}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters.kioskboard-specialcharacter-show{visibility:visible;opacity:1}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close{-webkit-transition:all .36s ease-in-out;-o-transition:all .36s ease-in-out;transition:all .36s ease-in-out;cursor:pointer;position:absolute;z-index:30;right:0;top:0;width:40px;height:40px;background:#a9a9a9;border-radius:20px;-webkit-box-shadow:0 0 16px -6px rgba(0,0,0,.25);box-shadow:0 0 16px -6px rgba(0,0,0,.25)}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close svg{position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;fill:#fff!important;width:16px!important;height:16px!important}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close:hover{-webkit-transform:rotate(90deg);transform:rotate(90deg)}#KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content{width:100%;max-height:100%;padding-right:5px;overflow-x:hidden;overflow-y:auto}#KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content::-webkit-scrollbar{height:6px;width:6px}#KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content::-webkit-scrollbar-track{border-radius:3px;background:rgba(255,255,255,.75)}#KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content::-webkit-scrollbar-thumb{border-radius:3px;background:rgba(0,0,0,.25);cursor:pointer}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-key{min-width:60px;min-height:30px}#KioskBoard-VirtualKeyboard.kioskboard-theme-light,#KioskBoard-VirtualKeyboard.kioskboard-theme-material{-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);background:#e3e3e3;background:linear-gradient(to right bottom,#eee,#ebebeb,#e8e8e8,#e6e6e6,#e3e3e3)}#KioskBoard-VirtualKeyboard.kioskboard-theme-dark{-webkit-box-shadow:inset 1px 1px 0 rgba(0,0,0,.25),0 0 20px -8px rgba(0,0,0,.15);box-shadow:inset 1px 1px 0 rgba(0,0,0,.25),0 0 20px -8px rgba(0,0,0,.15);background:#151515;background:linear-gradient(to left top,#151515,#171717,#1a1a1a,#1c1c1c,#1e1e1e)}#KioskBoard-VirtualKeyboard.kioskboard-theme-flat{-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);background:#dfdfdf}#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool{-webkit-box-shadow:inset 4px 4px 4px rgba(0,0,0,.02),0 0 20px -8px rgba(0,0,0,.1);box-shadow:inset 4px 4px 4px rgba(0,0,0,.02),0 0 20px -8px rgba(0,0,0,.1);background:#e5e5e5;background:linear-gradient(to right bottom,#e5e5e5,#e6e6e6,#e7e7e7,#e7e7e7,#e8e8e8)}#KioskBoard-VirtualKeyboard.kioskboard-theme-light .kioskboard-row span[class^=kioskboard-key],#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row span[class^=kioskboard-key]{color:#707070;background:#fafafa}#KioskBoard-VirtualKeyboard.kioskboard-theme-dark .kioskboard-row span[class^=kioskboard-key]{border-color:rgba(255,255,255,.02);border-bottom-color:rgba(255,255,255,.04);-webkit-box-shadow:0 5px 0 .05px rgba(255,255,255,.2);box-shadow:0 5px 0 .05px rgba(255,255,255,.2);color:#b7b7b7;background:#323232}#KioskBoard-VirtualKeyboard.kioskboard-theme-flat .kioskboard-row span[class^=kioskboard-key]{color:#707070;background:#fafafa;border-color:#fafafa;border-bottom-color:#fafafa;-webkit-box-shadow:0 2px 0 .05px #fafafa;box-shadow:0 2px 0 .05px #fafafa}#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool .kioskboard-row span[class^=kioskboard-key]{color:#8f8f8f;text-shadow:0 0 1px rgba(0,0,0,.2);background:#fafafa;-webkit-box-shadow:0 4px 6px .06px rgba(0,0,0,.05);box-shadow:0 4px 6px .06px rgba(0,0,0,.05)}#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool .kioskboard-row span[class^=kioskboard-key]::after{content:"";position:absolute;left:0;top:-5px;right:0;bottom:0;width:100%;height:calc(100% - 5px);background:rgba(255,255,255,.1);-webkit-box-shadow:0 5px 15px -10px rgba(0,0,0,.4);box-shadow:0 5px 15px -10px rgba(0,0,0,.4);margin:auto;border-radius:inherit;border:4px solid rgba(0,0,0,.06);border-top-color:rgba(0,0,0,.02);border-bottom-color:transparent;box-sizing:border-box;border-top-width:2px;border-bottom-width:6px}#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-key-capslock::before{right:9px;top:9px}#KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-key-capslock::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-key-capslock::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-key-capslock::before{background:#c4c4c4}#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-key-capslock::before{background:#a9a9a9}#KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-key-capslock::before{background:#e6e6e6}#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-key-capslock.capslock-active::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-key-capslock.capslock-active::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-key-capslock.capslock-active::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-key-capslock.capslock-active::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-key-capslock.capslock-active::before{background:#5decaa}#KioskBoard-VirtualKeyboard.kioskboard-theme-flat .kioskboard-row span[class^=kioskboard-key] svg,#KioskBoard-VirtualKeyboard.kioskboard-theme-light .kioskboard-row span[class^=kioskboard-key] svg{fill:#707070!important}#KioskBoard-VirtualKeyboard.kioskboard-theme-dark .kioskboard-row span[class^=kioskboard-key] svg{fill:#a9a9a9!important}#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool .kioskboard-row span[class^=kioskboard-key] svg{left:12px;fill:#a1a1a1!important}#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row span[class^=kioskboard-key] svg{fill:#fafafa!important}#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-backspace,#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-capslock,#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-specialcharacter,#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-numpad span.kioskboard-key-backspace{-webkit-box-shadow:0 4px 0 .04px rgba(0,0,0,.3);box-shadow:0 4px 0 .04px rgba(0,0,0,.3);border-bottom-color:rgba(0,0,0,.03);color:#fafafa;background:#b0b0b0}#KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-specialcharacter-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-specialcharacter-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-specialcharacter-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-specialcharacter-close{background:#a9a9a9}#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-specialcharacter-close{background:#323232}#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-specialcharacter-close svg{fill:#b7b7b7!important}@media only screen and (max-width:767px){#KioskBoard-VirtualKeyboard{min-height:210px;padding:12px 6px}#KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key]{font-size:13px!important;margin:2px 2px 12px;padding:8px 0;width:auto;min-width:22.5px;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;text-align:center;border-radius:4px}#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span[class^=kioskboard-key]{margin:4px 4px 12px;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;font-size:16px!important;width:calc(33.3333% - 16px);min-height:55px}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-backspace,#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock,#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-enter,#KioskBoard-VirtualKeyboard .kioskboard-with-specialcharacter span.kioskboard-key-specialcharacter{max-width:60px;min-height:45px;margin-bottom:4px}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-space{padding-top:10px;min-height:45px;margin-bottom:4px}#KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key] svg{-webkit-transform:scale(.7);transform:scale(.7);-webkit-transform-origin:left top;transform-origin:left top;left:8px;top:8px}#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span[class^=kioskboard-key] svg{top:0;left:18px;bottom:0;margin:auto;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters{padding:15px 15px 10px}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close{width:30px;height:30px;top:0;right:5px}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-fade{opacity:1;-webkit-animation:kioskboard-animation-fade .36s ease-in-out 0s normal;animation:kioskboard-animation-fade .36s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes kioskboard-animation-fade{0%{opacity:0}100%{opacity:1}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-fade.kioskboard-fade-remove{opacity:0;-webkit-animation:kioskboard-animation-fade-remove .36s ease-in-out 0s normal;animation:kioskboard-animation-fade-remove .36s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes kioskboard-animation-fade-remove{0%{opacity:1}100%{opacity:0}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-placement-bottom.kioskboard-slide{bottom:0;-webkit-animation:kioskboard-animation-slide-bottom 1.2s ease-in-out 0s normal;animation:kioskboard-animation-slide-bottom 1.2s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-slide-bottom{0%{bottom:-100%}100%{bottom:0}}@keyframes kioskboard-animation-slide-bottom{0%{bottom:-100%}100%{bottom:0}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-slide.kioskboard-placement-bottom.kioskboard-slide-remove{bottom:-100%;-webkit-animation:kioskboard-animation-slide-bottom-remove 1.2s ease-in-out 0s normal;animation:kioskboard-animation-slide-bottom-remove 1.2s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-slide-bottom-remove{0%{bottom:0}100%{bottom:-100%}}@keyframes kioskboard-animation-slide-bottom-remove{0%{bottom:0}100%{bottom:-100%}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-placement-top.kioskboard-slide{top:0;-webkit-animation:kioskboard-animation-slide-top 1.2s ease-in-out 0s normal;animation:kioskboard-animation-slide-top 1.2s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-slide-top{0%{top:-100%}100%{top:0}}@keyframes kioskboard-animation-slide-top{0%{top:-100%}100%{top:0}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-slide.kioskboard-placement-top.kioskboard-slide-remove{top:-100%;-webkit-animation:kioskboard-animation-slide-top-remove 1.2s ease-in-out 0s normal;animation:kioskboard-animation-slide-top-remove 1.2s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-slide-top-remove{0%{top:0}100%{top:-100%}}@keyframes kioskboard-animation-slide-top-remove{0%{top:0}100%{top:-100%}}';
+    var internalCSS = `
+    #KioskBoard-VirtualKeyboard{box-sizing:border-box!important;position:fixed;z-index:2000;width:100%;max-width:1440px;background:#e3e3e3;background:linear-gradient(to right bottom,#eee,#ebebeb,#e8e8e8,#e6e6e6,#e3e3e3);-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);padding:25px 20px 20px;left:0;right:0;margin:auto}
+    #KioskBoard-VirtualKeyboard.kioskboard-placement-bottom{top:unset;bottom:0;border-radius:10px 10px 0 0}
+    #KioskBoard-VirtualKeyboard.kioskboard-placement-top{top:0;bottom:unset;border-radius:0 0 10px 10px}
+    #KioskBoard-VirtualKeyboard *{box-sizing:border-box!important}
+    #KioskBoard-VirtualKeyboard .kioskboard-wrapper{position:relative;background:inherit;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}
+    #KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow{padding-right:12px!important;overflow:hidden auto}
+    #KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow::-webkit-scrollbar{height:6px;width:6px}
+    #KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow::-webkit-scrollbar-track{border-radius:3px;background:rgba(255,255,255,.75)}
+    #KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow::-webkit-scrollbar-thumb{border-radius:3px;background:rgba(0,0,0,.25);cursor:pointer}
+    #KioskBoard-VirtualKeyboard .kioskboard-row{position:relative;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center}
+    #KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key]{-webkit-user-select:none;-ms-user-select:none;-moz-user-select:none;user-select:none;position:relative;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;-webkit-transform-origin:bottom center;transform-origin:bottom center;cursor:pointer;font-size:22px;line-height:1;font-weight:normal;font-family:sans-serif;max-width:6.25%;margin:8px 8px 12px;padding:12px 12px 22px;border-radius:8px;background:#fafafa;color:#707070;border:2px solid rgba(255,255,255,.04);-webkit-box-shadow:0 4px 0 .04px rgba(0,0,0,.1);box-shadow:0 4px 0 .04px rgba(0,0,0,.1);border-bottom-color:rgba(255,255,255,.1);border-bottom-width:4px;-webkit-box-flex:1;-webkit-flex:1 1 100%;-ms-flex:1 1 100%;flex:1 1 100%;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;text-align:left}
+    #KioskBoard-VirtualKeyboard.kioskboard-tolowercase .kioskboard-row-dynamic span[class^=kioskboard-key]{text-transform:lowercase}
+    #KioskBoard-VirtualKeyboard.kioskboard-touppercase .kioskboard-row-dynamic span[class^=kioskboard-key]{text-transform:uppercase}
+    #KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key]:not(.spacebar-denied):hover{-webkit-transform:scaleY(.98) translateY(1px);transform:scaleY(.98) translateY(1px)}
+    #KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key]:not(.spacebar-denied):active{-webkit-transform:scaleY(.95) translateY(4px);transform:scaleY(.95) translateY(4px)}
+    #KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key] svg{position:absolute;z-index:10;left:10px;top:10px}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-top{padding:0 0 10px;border-bottom:1px solid rgba(0,0,0,.06);margin:0 0 10px}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom{padding:10px 0 0;border-top:1px solid rgba(0,0,0,.06);margin:10px 0 0}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock{max-width:100%;min-height:60px;width:140px;-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock::before{content:"";position:absolute;z-index:2;width:10px;height:10px;border-radius:10px;right:6px;top:6px;background:#c4c4c4}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock.capslock-active::before{background:#5decaa}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-backspace,#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-enter{position:relative;max-width:100%;min-height:60px;width:140px;-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-space{min-height:60px;max-width:100%;width:calc(100% - 16px - 140px - 16px - 140px - 16px - 140px - 16px);-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom.kioskboard-with-specialcharacter span.kioskboard-key-space{width:calc(100% - 16px - 140px - 16px - 140px - 16px - 140px - 16px - 140px - 16px)}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom.kioskboard-with-language span.kioskboard-key-space{width:calc(100% - 16px - 140px - 16px - 140px - 16px - 140px - 16px - 140px - 16px)}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom.kioskboard-with-specialcharacter.kioskboard-with-language span.kioskboard-key-space{width:calc(100% - 16px - 140px - 16px - 140px - 16px - 140px - 16px - 140px - 16px - 140px - 16px)}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-space.spacebar-denied{opacity:.4!important;cursor:not-allowed!important}
+    #KioskBoard-VirtualKeyboard .kioskboard-with-specialcharacter span.kioskboard-key-specialcharacter{position:relative;max-width:100%;min-height:60px;width:140px;-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}
+    #KioskBoard-VirtualKeyboard .kioskboard-with-language span.kioskboard-key-language{position:relative;max-width:100%;min-height:60px;width:140px;-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-numpad{display:flex;max-width:320px;margin:auto}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-numpad span[class^=kioskboard-key]{max-width:100%;min-height:60px;width:calc(33.3333% - 16px);-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-last{order:11}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-backspace{order:10}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-enter{order:12}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters{-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;visibility:hidden;opacity:0;position:absolute;background:inherit;padding:20px;z-index:20;left:0;top:0;height:100%;width:100%}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters.kioskboard-specialcharacter-show{visibility:visible;opacity:1}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close{-webkit-transition:all .36s ease-in-out;-o-transition:all .36s ease-in-out;transition:all .36s ease-in-out;cursor:pointer;position:absolute;z-index:30;right:0;top:0;width:40px;height:40px;background:#a9a9a9;border-radius:20px;-webkit-box-shadow:0 0 16px -6px rgba(0,0,0,.25);box-shadow:0 0 16px -6px rgba(0,0,0,.25)}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close svg{position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;fill:#fff!important;width:16px!important;height:16px!important}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close:hover{-webkit-transform:rotate(90deg);transform:rotate(90deg)}
+    #KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content{width:100%;max-height:100%;padding-right:5px;overflow-x:hidden;overflow-y:auto}
+    #KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content::-webkit-scrollbar{height:6px;width:6px}
+    #KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content::-webkit-scrollbar-track{border-radius:3px;background:rgba(255,255,255,.75)}
+    #KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content::-webkit-scrollbar-thumb{border-radius:3px;background:rgba(0,0,0,.25);cursor:pointer}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-key{min-width:60px;min-height:30px}
+    
+    /* Language Selection Popup Styles */
+    #KioskBoard-VirtualKeyboard .kioskboard-row-languages{-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;visibility:hidden;opacity:0;position:absolute;background:inherit;padding:20px;z-index:25;left:0;top:0;height:100%;width:100%}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-languages.kioskboard-language-show{visibility:visible;opacity:1}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-languages span.kioskboard-language-close{-webkit-transition:all .36s ease-in-out;-o-transition:all .36s ease-in-out;transition:all .36s ease-in-out;cursor:pointer;position:absolute;z-index:30;right:0;top:0;width:40px;height:40px;background:#a9a9a9;border-radius:20px;-webkit-box-shadow:0 0 16px -6px rgba(0,0,0,.25);box-shadow:0 0 16px -6px rgba(0,0,0,.25)}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-languages span.kioskboard-language-close svg{position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;fill:#fff!important;width:16px!important;height:16px!important}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-languages span.kioskboard-language-close:hover{-webkit-transform:rotate(90deg);transform:rotate(90deg)}
+    #KioskBoard-VirtualKeyboard .kioskboard-languages-content{width:100%;max-height:100%;padding-right:5px;overflow-x:hidden;overflow-y:auto;display:flex;flex-wrap:wrap;gap:10px}
+    #KioskBoard-VirtualKeyboard .kioskboard-languages-content::-webkit-scrollbar{height:6px;width:6px}
+    #KioskBoard-VirtualKeyboard .kioskboard-languages-content::-webkit-scrollbar-track{border-radius:3px;background:rgba(255,255,255,.75)}
+    #KioskBoard-VirtualKeyboard .kioskboard-languages-content::-webkit-scrollbar-thumb{border-radius:3px;background:rgba(0,0,0,.25);cursor:pointer}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-languages span.kioskboard-language-option{min-width:120px;min-height:50px;margin:5px;padding:10px 15px;border-radius:8px;background:#fafafa;color:#707070;border:2px solid rgba(255,255,255,.04);box-shadow:0 4px 0 .04px rgba(0,0,0,.1);cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:bold;transition:all .2s ease-in-out}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-languages span.kioskboard-language-option:hover{transform:translateY(-2px);box-shadow:0 6px 0 .04px rgba(0,0,0,.15)}
+    #KioskBoard-VirtualKeyboard .kioskboard-row-languages span.kioskboard-language-option.active{background:#5decaa;color:#fff}
+    
+    /* Theme adjustments for new styles */
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-light,#KioskBoard-VirtualKeyboard.kioskboard-theme-material{-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);background:#e3e3e3;background:linear-gradient(to right bottom,#eee,#ebebeb,#e8e8e8,#e6e6e6,#e3e3e3)}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-dark{-webkit-box-shadow:inset 1px 1px 0 rgba(0,0,0,.25),0 0 20px -8px rgba(0,0,0,.15);box-shadow:inset 1px 1px 0 rgba(0,0,0,.25),0 0 20px -8px rgba(0,0,0,.15);background:#151515;background:linear-gradient(to left top,#151515,#171717,#1a1a1a,#1c1c1c,#1e1e1e)}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-flat{-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),0 0 20px -8px rgba(0,0,0,.15);background:#dfdfdf}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool{-webkit-box-shadow:inset 4px 4px 4px rgba(0,0,0,.02),0 0 20px -8px rgba(0,0,0,.1);box-shadow:inset 4px 4px 4px rgba(0,0,0,.02),0 0 20px -8px rgba(0,0,0,.1);background:#e5e5e5;background:linear-gradient(to right bottom,#e5e5e5,#e6e6e6,#e7e7e7,#e7e7e7,#e8e8e8)}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-light .kioskboard-row span[class^=kioskboard-key],#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row span[class^=kioskboard-key]{color:#707070;background:#fafafa}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-dark .kioskboard-row span[class^=kioskboard-key]{border-color:rgba(255,255,255,.02);border-bottom-color:rgba(255,255,255,.04);-webkit-box-shadow:0 5px 0 .05px rgba(255,255,255,.2);box-shadow:0 5px 0 .05px rgba(255,255,255,.2);color:#b7b7b7;background:#323232}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-flat .kioskboard-row span[class^=kioskboard-key]{color:#707070;background:#fafafa;border-color:#fafafa;border-bottom-color:#fafafa;-webkit-box-shadow:0 2px 0 .05px #fafafa;box-shadow:0 2px 0 .05px #fafafa}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool .kioskboard-row span[class^=kioskboard-key]{color:#8f8f8f;text-shadow:0 0 1px rgba(0,0,0,.2);background:#fafafa;-webkit-box-shadow:0 4px 6px .06px rgba(0,0,0,.05);box-shadow:0 4px 6px .06px rgba(0,0,0,.05)}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool .kioskboard-row span[class^=kioskboard-key]::after{content:"";position:absolute;left:0;top:-5px;right:0;bottom:0;width:100%;height:calc(100% - 5px);background:rgba(255,255,255,.1);-webkit-box-shadow:0 5px 15px -10px rgba(0,0,0,.4);box-shadow:0 5px 15px -10px rgba(0,0,0,.4);margin:auto;border-radius:inherit;border:4px solid rgba(0,0,0,.06);border-top-color:rgba(0,0,0,.02);border-bottom-color:transparent;box-sizing:border-box;border-top-width:2px;border-bottom-width:6px}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-key-capslock::before{right:9px;top:9px}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-key-capslock::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-key-capslock::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-key-capslock::before{background:#c4c4c4}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-key-capslock::before{background:#a9a9a9}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-key-capslock::before{background:#e6e6e6}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-key-capslock.capslock-active::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-key-capslock.capslock-active::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-key-capslock.capslock-active::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-key-capslock.capslock-active::before,#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-key-capslock.capslock-active::before{background:#5decaa}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-flat .kioskboard-row span[class^=kioskboard-key] svg,#KioskBoard-VirtualKeyboard.kioskboard-theme-light .kioskboard-row span[class^=kioskboard-key] svg{fill:#707070!important}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-dark .kioskboard-row span[class^=kioskboard-key] svg{fill:#a9a9a9!important}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool .kioskboard-row span[class^=kioskboard-key] svg{left:12px;fill:#a1a1a1!important}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row span[class^=kioskboard-key] svg{fill:#fafafa!important}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-backspace,#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-capslock,#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-specialcharacter,#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-language,#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-numpad span.kioskboard-key-backspace{-webkit-box-shadow:0 4px 0 .04px rgba(0,0,0,.3);box-shadow:0 4px 0 .04px rgba(0,0,0,.3);border-bottom-color:rgba(0,0,0,.03);color:#fafafa;background:#b0b0b0}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-specialcharacter-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-specialcharacter-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-specialcharacter-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-specialcharacter-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-language-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-language-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-language-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-language-close{background:#a9a9a9}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-specialcharacter-close,#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-language-close{background:#323232}
+    #KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-specialcharacter-close svg,#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-language-close svg{fill:#b7b7b7!important}
+    
+    @media only screen and (max-width:767px){#KioskBoard-VirtualKeyboard{min-height:210px;padding:12px 6px}#KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key]{font-size:13px!important;margin:2px 2px 12px;padding:8px 0;width:auto;min-width:22.5px;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;text-align:center;border-radius:4px}#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span[class^=kioskboard-key]{margin:4px 4px 12px;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;font-size:16px!important;width:calc(33.3333% - 16px);min-height:55px}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-backspace,#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock,#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-enter,#KioskBoard-VirtualKeyboard .kioskboard-with-specialcharacter span.kioskboard-key-specialcharacter,#KioskBoard-VirtualKeyboard .kioskboard-with-language span.kioskboard-key-language{max-width:60px;min-height:45px;margin-bottom:4px}#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-space{padding-top:10px;min-height:45px;margin-bottom:4px}#KioskBoard-VirtualKeyboard .kioskboard-row span[class^=kioskboard-key] svg{-webkit-transform:scale(.7);transform:scale(.7);-webkit-transform-origin:left top;transform-origin:left top;left:8px;top:8px}#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span[class^=kioskboard-key] svg{top:0;left:18px;bottom:0;margin:auto;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters{padding:15px 15px 10px}#KioskBoard-VirtualKeyboard .kioskboard-row-languages{padding:15px 15px 10px}#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close,#KioskBoard-VirtualKeyboard .kioskboard-row-languages span.kioskboard-language-close{width:30px;height:30px;top:0;right:5px}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-fade{opacity:1;-webkit-animation:kioskboard-animation-fade .36s ease-in-out 0s normal;animation:kioskboard-animation-fade .36s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes kioskboard-animation-fade{0%{opacity:0}100%{opacity:1}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-fade.kioskboard-fade-remove{opacity:0;-webkit-animation:kioskboard-animation-fade-remove .36s ease-in-out 0s normal;animation:kioskboard-animation-fade-remove .36s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes kioskboard-animation-fade-remove{0%{opacity:1}100%{opacity:0}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-placement-bottom.kioskboard-slide{bottom:0;-webkit-animation:kioskboard-animation-slide-bottom 1.2s ease-in-out 0s normal;animation:kioskboard-animation-slide-bottom 1.2s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-slide-bottom{0%{bottom:-100%}100%{bottom:0}}@keyframes kioskboard-animation-slide-bottom{0%{bottom:-100%}100%{bottom:0}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-slide.kioskboard-placement-bottom.kioskboard-slide-remove{bottom:-100%;-webkit-animation:kioskboard-animation-slide-bottom-remove 1.2s ease-in-out 0s normal;animation:kioskboard-animation-slide-bottom-remove 1.2s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-slide-bottom-remove{0%{bottom:0}100%{bottom:-100%}}@keyframes kioskboard-animation-slide-bottom-remove{0%{bottom:0}100%{bottom:-100%}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-placement-top.kioskboard-slide{top:0;-webkit-animation:kioskboard-animation-slide-top 1.2s ease-in-out 0s normal;animation:kioskboard-animation-slide-top 1.2s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-slide-top{0%{top:-100%}100%{top:0}}@keyframes kioskboard-animation-slide-top{0%{top:-100%}100%{top:0}}#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-slide.kioskboard-placement-top.kioskboard-slide-remove{top:-100%;-webkit-animation:kioskboard-animation-slide-top-remove 1.2s ease-in-out 0s normal;animation:kioskboard-animation-slide-top-remove 1.2s ease-in-out 0s normal}@-webkit-keyframes kioskboard-animation-slide-top-remove{0%{top:0}100%{top:-100%}}@keyframes kioskboard-animation-slide-top-remove{0%{top:0}100%{top:-100%}}`;
     return internalCSS || null;
   };
   // KioskBoard: Internal CSS codes: end
@@ -44,6 +126,50 @@
     }
   };
   // KioskBoard: Internal CSS: end
+
+  // Language definitions with keyboard layouts
+  var kioskBoardLanguages = {
+  'en': {
+    name: 'English',
+    keys: [
+      [
+        {'0': 'q', '1': 'w', '2': 'e', '3': 'r', '4': 't', '5': 'y', '6': 'u', '7': 'i', '8': 'o', '9': 'p'},
+        {'0': 'a', '1': 's', '2': 'd', '3': 'f', '4': 'g', '5': 'h', '6': 'j', '7': 'k', '8': 'l'},
+        {'0': 'z', '1': 'x', '2': 'c', '3': 'v', '4': 'b', '5': 'n', '6': 'm'}
+      ]
+    ]
+  },
+  'es': {
+    name: 'Espa&#241;ol',
+    keys: [
+      [
+        {'0': 'q', '1': 'w', '2': 'e', '3': 'r', '4': 't', '5': 'y', '6': 'u', '7': 'i', '8': 'o', '9': 'p'},
+        {'0': 'a', '1': 's', '2': 'd', '3': 'f', '4': 'g', '5': 'h', '6': 'j', '7': 'k', '8': 'l', '9': '&#241;'},
+        {'0': 'z', '1': 'x', '2': 'c', '3': 'v', '4': 'b', '5': 'n', '6': 'm'}
+      ]
+    ]
+  },
+  'fr': {
+    name: 'Fran&#231;ais',
+    keys: [
+      [
+        {'0': 'a', '1': 'z', '2': 'e', '3': 'r', '4': 't', '5': 'y', '6': 'u', '7': 'i', '8': 'o', '9': 'p'},
+        {'0': 'q', '1': 's', '2': 'd', '3': 'f', '4': 'g', '5': 'h', '6': 'j', '7': 'k', '8': 'l', '9': 'm'},
+        {'0': 'w', '1': 'x', '2': 'c', '3': 'v', '4': 'b', '5': 'n'}
+      ]
+    ]
+  },
+  'de': {
+    name: 'Deutsch',
+    keys: [
+      [
+        {'0': 'q', '1': 'w', '2': 'e', '3': 'r', '4': 't', '5': 'z', '6': 'u', '7': 'i', '8': 'o', '9': 'p', '10': '&#252;'},
+        {'0': 'a', '1': 's', '2': 'd', '3': 'f', '4': 'g', '5': 'h', '6': 'j', '7': 'k', '8': 'l', '9': '&#246;', '10': '&#228;'},
+        {'0': 'y', '1': 'x', '2': 'c', '3': 'v', '4': 'b', '5': 'n', '6': 'm', '7': '&#223;'}
+      ]
+    ]
+  }
+};
 
   // KioskBoard: Default Options: begin
   var kioskBoardDefaultOptions = {
@@ -69,9 +195,15 @@
     keysEnterText: 'Enter',
     keysEnterCallback: undefined,
     keysEnterCanClose: true,
+    // Language options
+    allowLanguageSwitch: true,
+    languageButtonText: 'Lang',
+    onLanguageChange: undefined
   };
+  
   var kioskBoardCachedKeys;
   var kioskBoardNewOptions;
+  var kioskBoardCurrentLanguage = 'en';
   var kioskBoardGithubUrl = 'https://github.com/furcan/KioskBoard';
   var kioskBoardSpecialCharacters = {
     '0': '!',
@@ -79,7 +211,7 @@
     '2': '^',
     '3': '#',
     '4': '+',
-    '5': '$',
+    '5': ',',
     '6': '%',
     '7': '½',
     '8': '&',
@@ -216,9 +348,15 @@
   };
   var kioskBoardIconSpecialCharacters = function (width, height, color) {
     if (!width) { width = 50; }
-    if (!height) { width = 25; }
+    if (!height) { height = 25; }
     if (!color) { color = '#707070'; }
     var icon = '&nbsp;<svg id="KioskBoardIconSpecialCharacters" xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '" style="width:' + width + ';height:' + height + ';fill:' + color + ';shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 300 150"><path d="M34.19 79.43l1.99 -10.86 10.8 0 -1.96 10.86 -10.83 0zm264.98 -17.22l0 -9.63c0,-1.23 -1,-2.23 -2.24,-2.23l-74.48 0c-1.24,0 -2.24,1 -2.24,2.23l0 9.63c0,1.23 1,2.23 2.24,2.23l74.48 0c1.24,0 2.24,-1 2.24,-2.23zm0 35.22l0 -9.62c0,-1.23 -1,-2.23 -2.24,-2.23l-74.48 0c-1.24,0 -2.24,1 -2.24,2.23l0 9.62c0,1.23 1,2.24 2.24,2.24l74.48 0c1.24,0 2.24,-1.01 2.24,-2.24zm-153.98 -61.91l9.63 0c1.23,0 2.23,1.01 2.23,2.25l0 30.19 30.19 0c1.25,0 2.25,1.01 2.25,2.23l0 9.63c0,1.23 -1,2.23 -2.25,2.23l-30.19 0 0 30.19c0,1.25 -1,2.25 -2.23,2.25l-9.63 0c-1.23,0 -2.23,-1 -2.23,-2.25l0 -30.19 -30.19 0c-1.24,0 -2.25,-1 -2.25,-2.23l0 -9.63c0,-1.22 1.01,-2.23 2.25,-2.23l30.19 0 0 -30.19c0,-1.24 1,-2.25 2.23,-2.25zm-67.7 33.05c1.28,0 2.31,-1.03 2.31,-2.31l0 -9.2c0,-1.27 -1.03,-2.31 -2.31,-2.31l-13.93 0 2.95 -16.51c0.12,-0.68 -0.07,-1.37 -0.51,-1.89 -0.44,-0.53 -1.09,-0.83 -1.77,-0.83l-9.36 -0.01c0,0 0,0 0,0 -1.12,0 -2.08,0.8 -2.28,1.9l-3.12 17.34 -10.74 0 3.03 -16.49c0.12,-0.67 -0.06,-1.37 -0.5,-1.89 -0.44,-0.53 -1.09,-0.84 -1.77,-0.84l-9.48 -0.01c0,0 0,0 0,0 -1.12,0 -2.08,0.8 -2.28,1.9l-3.16 17.33 -21.43 0c-1.28,0 -2.31,1.04 -2.31,2.32l0 9.19c0,1.28 1.03,2.31 2.31,2.31l18.91 0 -1.98 10.86 -16.93 0c-1.28,0 -2.31,1.04 -2.31,2.31l0 9.2c0,1.28 1.03,2.31 2.31,2.31l14.41 0 -3.35 18.36c-0.12,0.67 0.06,1.37 0.5,1.89 0.44,0.53 1.09,0.84 1.78,0.84l9.36 0c1.12,0 2.08,-0.8 2.28,-1.9l3.53 -19.19 10.88 0 -3.31 18.42c-0.13,0.67 0.06,1.36 0.49,1.89 0.44,0.52 1.08,0.83 1.76,0.84l9.49 0.09c0,0 0.01,0 0.02,0 1.12,0 2.08,-0.81 2.28,-1.91l3.44 -19.33 20.79 0c1.28,0 2.31,-1.03 2.31,-2.31l0 -9.2c0,-1.27 -1.03,-2.31 -2.31,-2.31l-18.32 0 1.93 -10.86 16.39 0z"/></svg>';
+    return icon;
+  };
+  var kioskBoardIconLanguage = function (width, color) {
+    if (!width) { width = 25; }
+    if (!color) { color = '#707070'; }
+    var icon = '&nbsp;<svg id="KioskBoardIconLanguage" xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + width + '" style="width:' + width + ';height:' + width + ';fill:' + color + ';" viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>';
     return icon;
   };
   var kioskBoardIconClose = function (width, color) {
@@ -228,6 +366,93 @@
     return icon;
   };
   // KioskBoard: Icons: end
+
+  // KioskBoard: Get Available Languages Dynamically: begin
+  var kioskBoardGetAvailableLanguages = function () {
+    return Object.keys(kioskBoardLanguages);
+  };
+  // KioskBoard: Get Available Languages Dynamically: end
+
+  // KioskBoard: Add New Language: begin
+  var kioskBoardAddLanguage = function (languageCode, languageData) {
+    if (typeof languageCode === 'string' && 
+        typeof languageData === 'object' && 
+        languageData.name && 
+        languageData.keys && 
+        Array.isArray(languageData.keys)) {
+      kioskBoardLanguages[languageCode] = languageData;
+      return true;
+    }
+    kioskBoardConsoleError('Invalid language data. Language must have "name" and "keys" properties.');
+    return false;
+  };
+  // KioskBoard: Add New Language: end
+
+  // KioskBoard: Remove Language: begin
+  var kioskBoardRemoveLanguage = function (languageCode) {
+    if (kioskBoardLanguages[languageCode]) {
+      delete kioskBoardLanguages[languageCode];
+      return true;
+    }
+    return false;
+  };
+  // KioskBoard: Get Language Keys: begin
+  var kioskBoardGetLanguageKeys = function (language) {
+    if (kioskBoardLanguages[language] && kioskBoardLanguages[language].keys) {
+      return kioskBoardLanguages[language].keys[0];
+    }
+    return kioskBoardLanguages['en'].keys[0]; // fallback to English
+  };
+  // KioskBoard: Get Language Keys: end
+
+  // KioskBoard: Update Keyboard Language: begin
+  var kioskBoardUpdateKeyboardLanguage = function (newLanguage, keyboardElement, opt, inputElement) {
+    if (!kioskBoardLanguages[newLanguage]) {
+      kioskBoardConsoleError('Language "' + newLanguage + '" is not available.');
+      return false;
+    }
+
+    kioskBoardCurrentLanguage = newLanguage;
+    
+    // Update language attribute
+    keyboardElement.lang = newLanguage;
+    keyboardElement.style.webkitLocale = '"' + newLanguage + '"';
+    
+    // Get new keys for the language
+    var newKeys = kioskBoardGetLanguageKeys(newLanguage);
+    
+    // Update dynamic rows
+    var dynamicRows = keyboardElement.querySelectorAll('.kioskboard-row-dynamic');
+    if (dynamicRows && dynamicRows.length > 0 && newKeys.length > 0) {
+      for (var rowIndex = 0; rowIndex < dynamicRows.length && rowIndex < newKeys.length; rowIndex++) {
+        var row = dynamicRows[rowIndex];
+        var rowData = newKeys[rowIndex];
+        var newRowContent = '';
+        
+        var fontFamily = opt.keysFontFamily || 'sans-serif';
+        var fontSize = opt.keysFontSize || '22px';
+        var fontWeight = opt.keysFontWeight || 'normal';
+        
+        for (var keyIndex in rowData) {
+          if (Object.prototype.hasOwnProperty.call(rowData, keyIndex)) {
+            var keyValue = rowData[keyIndex];
+            var keyElement = '<span style="font-family:' + fontFamily + ',sans-serif;font-weight:' + fontWeight + ';font-size:' + fontSize + ';" class="kioskboard-key kioskboard-key-' + keyValue.toString().toLocaleLowerCase(newLanguage) + '" data-index="' + keyIndex.toString() + '" data-value="' + keyValue.toString() + '">' + keyValue.toString() + '</span>';
+            newRowContent += keyElement;
+          }
+        }
+        
+        row.innerHTML = newRowContent;
+      }
+    }
+    
+    // Trigger language change callback if provided
+    if (typeof opt.onLanguageChange === 'function') {
+      opt.onLanguageChange(newLanguage, kioskBoardLanguages[newLanguage].name);
+    }
+    
+    return true;
+  };
+  // KioskBoard: Update Keyboard Language: end
 
   // KioskBoard: IE support for Event: begin
   (function () {
@@ -270,8 +495,62 @@
     init: function (initOptions) {
       initOptions = typeof initOptions === 'object' && Object.keys(initOptions).length > 0 ? initOptions : {};
       kioskBoardNewOptions = kioskBoardExtendObjects(true, kioskBoardDefaultOptions, initOptions);
+      kioskBoardCurrentLanguage = kioskBoardNewOptions.language || 'en';
       kioskBoardInternalCSS();
     },
+    
+    // Set Language
+    setLanguage: function (language) {
+      if (kioskBoardLanguages[language]) {
+        kioskBoardCurrentLanguage = language;
+        var keyboardElement = window.document.getElementById('KioskBoard-VirtualKeyboard');
+        if (keyboardElement && kioskBoardNewOptions) {
+          // Find the current input element
+          var activeInput = window.document.activeElement;
+          var success = kioskBoardUpdateKeyboardLanguage(language, keyboardElement, kioskBoardNewOptions, activeInput);
+          if (success && activeInput) {
+            // Re-attach all event listeners
+            setTimeout(function() {
+              var keysClickListeners = window.kioskBoardKeysClickListeners;
+              if (keysClickListeners) {
+                keysClickListeners(activeInput);
+              }
+            }, 50);
+          }
+          return success;
+        }
+      }
+      return false;
+    },
+    
+    // Get Available Languages (Dynamic)
+    getAvailableLanguages: function () {
+      return kioskBoardGetAvailableLanguages();
+    },
+    
+    // Add New Language
+    addLanguage: function (languageCode, languageData) {
+      return kioskBoardAddLanguage(languageCode, languageData);
+    },
+    
+    // Get All Languages with Details
+    getLanguages: function () {
+      return Object.keys(kioskBoardLanguages).map(function(key) {
+        return {
+          code: key,
+          name: kioskBoardLanguages[key].name
+        };
+      });
+    },
+    
+    // Get Current Language
+    getCurrentLanguage: function () {
+      return {
+        code: kioskBoardCurrentLanguage,
+        name: kioskBoardLanguages[kioskBoardCurrentLanguage] ? kioskBoardLanguages[kioskBoardCurrentLanguage].name : 'English'
+      };
+    },
+
     // Run
     run: function (selectorOrElement, options) {
       // Element(s)
@@ -336,7 +615,7 @@
       // Step 1: check the "keysArrayOfObjects": end
 
       // Step 2: check the "keysJsonUrl": begin
-      if (!objectHasKeys) {
+      if (!objectHasKeys && opt.keysJsonUrl) {
         // keys json url is valid
         var keysJsonUrlIsValid = typeof opt.keysJsonUrl === 'string' && opt.keysJsonUrl.length > 0;
         // check the "keysJsonUrl"
@@ -346,6 +625,12 @@
         }
       }
       // Step 2: check the "keysJsonUrl": end
+
+      // Use built-in language keys if no custom keys are provided
+      if (!objectHasKeys && !opt.keysJsonUrl) {
+        kioskBoardCachedKeys = kioskBoardGetLanguageKeys(kioskBoardCurrentLanguage);
+        objectHasKeys = true;
+      }
 
       // Functions: Create Keyboard and AppendTo: begin
       var createKeyboardAndAppendTo = function (data, input) {
@@ -369,7 +654,8 @@
           var theInputPlacement = (theInput.dataset.kioskboardPlacement || '').toLocaleLowerCase('en');
           var keyboardPlacement = theInputPlacement === kioskBoardPlacements.Top ? theInputPlacement : kioskBoardPlacements.Bottom;
           var allowedSpecialCharacters = (theInput.dataset.kioskboardSpecialcharacters || '').toLocaleLowerCase('en') === 'true';
-          var keyboardLanguage = typeof opt.language === 'string' && opt.language.length > 0 ? opt.language.toLocaleLowerCase('en') : 'en';
+          var allowLanguageSwitch = opt.allowLanguageSwitch === true;
+          var keyboardLanguage = kioskBoardCurrentLanguage;
           // input element variables: end
 
           // check mobile keyboard allowed: begin
@@ -402,6 +688,7 @@
           var spaceKeyValue = keysAllowSpacebar ? ' ' : '';
           var keysSpacebarText = typeof opt.keysSpacebarText === 'string' && opt.keysSpacebarText.length > 0 ? opt.keysSpacebarText : 'Space';
           var keysEnterText = typeof opt.keysEnterText === 'string' && opt.keysEnterText.length > 0 ? opt.keysEnterText : 'Enter';
+          var languageButtonText = typeof opt.languageButtonText === 'string' && opt.languageButtonText.length > 0 ? opt.languageButtonText : 'Lang';
 
           var spaceKey = '<span style="font-family:' + fontFamily + ',sans-serif;font-weight:' + fontWeight + ';font-size:' + fontSize + ';" class="kioskboard-key kioskboard-key-space ' + (keysAllowSpacebar ? 'spacebar-allowed' : 'spacebar-denied') + '" data-value="' + spaceKeyValue + '">' + keysSpacebarText + '</span>';
           var capsLockKey = '<span style="font-family:' + fontFamily + ',sans-serif;font-weight:' + fontWeight + ';font-size:' + fontSize + ';" class="kioskboard-key-capslock ' + (isCapsLockActive ? 'capslock-active' : '') + '">' + kioskBoardIconCapslock(keysIconWidth, keysIconColor) + '</span>';
@@ -437,7 +724,33 @@
               }
             }
           }
-          // keyboard "specialcharacter" setting is "true": begin
+          // keyboard "specialcharacter" setting is "true": end
+
+          // keyboard "language" setting is "true": begin
+          var languageKey = '';
+          var languagesContentContainer = null;
+          if (allowLanguageSwitch) {
+            languageKey = '<span style="font-family:' + fontFamily + ',sans-serif;font-weight:' + fontWeight + ';font-size:' + fontSize + ';" class="kioskboard-key-language">' + kioskBoardIconLanguage(keysIconWidth, keysIconColor) + '</span>';
+
+            // Create language options using innerHTML to properly decode HTML entities
+            var languagesContentHTML = '';
+            var availableLanguages = kioskBoardGetAvailableLanguages(); // Dynamic detection
+            for (var langIndex = 0; langIndex < availableLanguages.length; langIndex++) {
+              var langCode = availableLanguages[langIndex];
+              if (kioskBoardLanguages[langCode]) {
+                var langName = kioskBoardLanguages[langCode].name;
+                var isActive = langCode === kioskBoardCurrentLanguage ? ' active' : '';
+                
+                languagesContentHTML += '<span style="font-family:' + fontFamily + ',sans-serif;font-weight:' + fontWeight + ';font-size:' + fontSize + ';" class="kioskboard-language-option' + isActive + '" data-language="' + langCode + '">' + langName + '</span>';
+              }
+            }
+            
+            // Create container and set innerHTML to decode HTML entities
+            languagesContentContainer = window.document.createElement('div');
+            languagesContentContainer.className = 'kioskboard-languages-content';
+            languagesContentContainer.innerHTML = languagesContentHTML;
+          }
+          // keyboard "language" setting is "true": end
 
           // keyboard type is "numpad": begin
           if (keyboardType === kioskBoardTypes.Numpad) {
@@ -498,7 +811,11 @@
             // dynamic keys group: end
 
             // bottom keys group: begin
-            keysRowElements += '<div class="kioskboard-row kioskboard-row-bottom ' + (allowedSpecialCharacters ? 'kioskboard-with-specialcharacter' : '') + '">' + capsLockKey + specialCharacterKey + spaceKey + enterKey + backspaceKey + '</div>';
+            var bottomRowClasses = 'kioskboard-row kioskboard-row-bottom';
+            if (allowedSpecialCharacters) bottomRowClasses += ' kioskboard-with-specialcharacter';
+            if (allowLanguageSwitch) bottomRowClasses += ' kioskboard-with-language';
+            
+            keysRowElements += '<div class="' + bottomRowClasses + '">' + capsLockKey + specialCharacterKey + languageKey + spaceKey + enterKey + backspaceKey + '</div>';
             // bottom keys group: end
 
             // add if special character keys allowed: begin
@@ -508,6 +825,21 @@
               keysRowElements += '<div class="kioskboard-row kioskboard-row-specialcharacters">' + closeSpecialCharacters + specialCharactersWrapper + '</div>';
             }
             // add if special character keys allowed: end
+
+            // add if language switching is allowed: begin
+            if (allowLanguageSwitch) {
+              var closeLanguages = '<span class="kioskboard-language-close">' + kioskBoardIconClose('18px', keysIconColor) + '</span>';
+              // Create languages wrapper and append the pre-built container
+              var languagesWrapperDiv = window.document.createElement('div');
+              languagesWrapperDiv.className = 'kioskboard-row kioskboard-row-languages';
+              languagesWrapperDiv.innerHTML = closeLanguages;
+              languagesWrapperDiv.appendChild(languagesContentContainer);
+              
+              // Convert to HTML string for insertion
+              var languagesWrapper = languagesWrapperDiv.outerHTML;
+              keysRowElements += languagesWrapper;
+            }
+            // add if language switching is allowed: end
           }
           // keyboard type is "all" or "keyboard": end
 
@@ -564,6 +896,12 @@
                 if (keyboardElm.parentNode !== null) {
                   keyboardElm.parentNode.removeChild(keyboardElm); // remove keyboard
                   window.document.body.classList.remove('kioskboard-body-padding'); // remove body padding class
+                  
+                  // Clean up global click listener
+                  if (window.kioskBoardDocClickListener) {
+                    window.document.removeEventListener('click', window.kioskBoardDocClickListener, true);
+                    window.kioskBoardDocClickListener = null;
+                  }
                 }
                 clearTimeout(removeTimeout);
               }, cssAnimationsDuration);
@@ -606,16 +944,31 @@
                 keyElement.addEventListener('contextmenu', function (event) {
                   event.preventDefault();
                 }, false);
-                keyElement.addEventListener('touchend', onClickHandler);
+                keyElement.addEventListener('touchend', onClickHandler, false);
+              } else {
+                // For mouse devices, use mousedown instead of click to prevent conflicts
+                keyElement.addEventListener('mousedown', onClickHandler, false);
               }
-
-              keyElement.addEventListener('click', onClickHandler);
+              
+              // Always add click as fallback
+              keyElement.addEventListener('click', onClickHandler, false);
             }
           };
           // keys event listeners: end
 
           // keys click listeners: begin
           var keysClickListeners = function (input) {
+            // Store the function globally so it can be called after language changes
+            window.kioskBoardKeysClickListeners = keysClickListeners;
+            
+            // Remove existing event listeners first to prevent duplicates
+            var existingKeys = window.document.querySelectorAll('.kioskboard-key, .kioskboard-key-capslock, .kioskboard-key-backspace, .kioskboard-key-enter, .kioskboard-key-specialcharacter, .kioskboard-key-language, .kioskboard-language-option, .kioskboard-specialcharacter-close, .kioskboard-language-close');
+            for (var i = 0; i < existingKeys.length; i++) {
+              var elem = existingKeys[i];
+              var newElem = elem.cloneNode(true);
+              elem.parentNode.replaceChild(newElem, elem);
+            }
+            
             // each key click listener: begin
             var eachKeyElm = window.document.querySelectorAll('.kioskboard-key');
             if (eachKeyElm && eachKeyElm.length > 0) {
@@ -749,6 +1102,81 @@
             }
             // specialcharacter key click listener: end
 
+            // language key click listener: begin
+            var languageKeyElm = window.document.querySelector('.kioskboard-key-language');
+            var languagesRowElm = window.document.querySelector('.kioskboard-row-languages');
+            // open
+            if (languageKeyElm && languagesRowElm) {
+              keysEventListeners(languageKeyElm, function (e) {
+                e.preventDefault();
+                input.focus(); // focus the input
+                if (e.currentTarget.classList.contains('language-active')) {
+                  e.currentTarget.classList.remove('language-active');
+                  languagesRowElm.classList.remove('kioskboard-language-show');
+                } else {
+                  e.currentTarget.classList.add('language-active');
+                  languagesRowElm.classList.add('kioskboard-language-show');
+                }
+              });
+            }
+            // close
+            var languageCloseElm = window.document.querySelector('.kioskboard-language-close');
+            if (languageCloseElm && languageKeyElm && languagesRowElm) {
+              keysEventListeners(languageCloseElm, function (e) {
+                e.preventDefault();
+                input.focus(); // focus the input
+                languageKeyElm.classList.remove('language-active');
+                languagesRowElm.classList.remove('kioskboard-language-show');
+              });
+            }
+            // language key click listener: end
+
+            // language option click listeners: begin
+            var languageOptionElms = window.document.querySelectorAll('.kioskboard-language-option');
+            if (languageOptionElms && languageOptionElms.length > 0) {
+              for (var loIndex = 0; loIndex < languageOptionElms.length; loIndex++) {
+                var langOptionElm = languageOptionElms[loIndex];
+                keysEventListeners(langOptionElm, function (e) {
+                  e.preventDefault();
+                  e.stopPropagation(); // Prevent event bubbling
+                  input.focus(); // focus the input
+                  
+                  var selectedLanguage = e.currentTarget.dataset.language;
+                  if (selectedLanguage && selectedLanguage !== kioskBoardCurrentLanguage) {
+                    // Update current language
+                    var success = kioskBoardUpdateKeyboardLanguage(selectedLanguage, kioskBoardVirtualKeyboard, opt, input);
+                    if (success) {
+                      // Update active language option
+                      var allLangOptions = window.document.querySelectorAll('.kioskboard-language-option');
+                      for (var i = 0; i < allLangOptions.length; i++) {
+                        allLangOptions[i].classList.remove('active');
+                      }
+                      e.currentTarget.classList.add('active');
+                      
+                      // Close language panel
+                      if (languageKeyElm && languagesRowElm) {
+                        languageKeyElm.classList.remove('language-active');
+                        languagesRowElm.classList.remove('kioskboard-language-show');
+                      }
+                      
+                      // Update the current language for this session
+                      keyboardLanguage = selectedLanguage;
+                      
+                      // Re-attach event listeners for the new keys immediately
+                      setTimeout(function() {
+                        // Store reference to prevent losing the click-outside listener
+                        var currentDocClickListener = window.kioskBoardDocClickListener;
+                        keysClickListeners(input);
+                        // Restore the click-outside listener
+                        window.kioskBoardDocClickListener = currentDocClickListener;
+                      }, 50);
+                    }
+                  }
+                });
+              }
+            }
+            // language option click listeners: end
+
             // enter key click listener: begin
             var enterKeyElm = window.document.querySelector('.kioskboard-key-enter');
             if (enterKeyElm) {
@@ -853,11 +1281,13 @@
                 ) {
                   removeKeyboard();
                   window.document.removeEventListener('click', docClickListener);
+                  // Clear the global reference
+                  window.kioskBoardDocClickListener = null;
                 }
                 // check event target to remove keyboard: end
 
                 // toggle inputs: begin
-                if (allInputs.indexOf(theInput) > -1) {
+                if (allInputs.indexOf(e.target) > -1) {
                   var toggleTimeout = setTimeout(function () {
                     e.target.blur();
                     e.target.focus();
@@ -868,9 +1298,12 @@
 
                 // clear doc click delay
                 clearTimeout(docClickTimeout);
-              }, cssAnimationsDuration);
+              }, 50); // Reduced delay for better responsiveness
             };
-            window.document.addEventListener('click', docClickListener); // add document click listener
+            
+            // Store the listener globally so it doesn't get lost during language changes
+            window.kioskBoardDocClickListener = docClickListener;
+            window.document.addEventListener('click', docClickListener, true); // Use capture phase
             // keyboard click outside listener: end
           }
           // append keyboard: end
