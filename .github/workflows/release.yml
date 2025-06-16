@@ -1,0 +1,56 @@
+name: Release with Minified File
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Trigger on version tag pushes (e.g., v2.3.1)
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Minify kioskboard-aio.js
+      run: npx terser build/kioskboard-aio.js --output build/kioskboard-aio.min.js
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: |
+          This release includes both the original and minified versions of kioskboard-aio.js.
+
+    - name: Upload Original File
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: build/kioskboard-aio.js
+        asset_name: kioskboard-aio.js
+        asset_content_type: application/javascript
+
+    - name: Upload Minified File
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: build/kioskboard-aio.min.js
+        asset_name: kioskboard-aio.min.js
+        asset_content_type: application/javascript
