@@ -357,7 +357,7 @@
     cssAnimationsStyle: 'slide', // "slide" || "fade"
     keysAllowSpacebar: true,
     keysSpacebarText: 'Space',
-    keysFontFamily: 'sans-serif',
+    keysFontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol",Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";',
     keysFontSize: '22px',
     keysFontWeight: 'normal',
     keysIconSize: '25px',
